@@ -43,7 +43,7 @@
     self.picture = [[UIImageView alloc] initWithImage:xida];
     self.picture.userInteractionEnabled = YES;
     self.picture.frame = CGRectMake(5, 25, screenWidth - 10, screenWidth - 10);
-    self.picture.contentMode = UIViewContentModeScaleAspectFill;
+    self.picture.contentMode = UIViewContentModeTopLeft;
     self.picture.backgroundColor = [UIColor lightGrayColor];
     self.picture.clipsToBounds = YES;
     
@@ -84,17 +84,16 @@
     self.centerOfStartingLocation = self.picture.center;
     
     //slider
-    //    CGRect slideFrame = CGRectMake(100, 400, 200, 20);
-    //    self.pictureRotationAngle = [[UISlider alloc] initWithFrame:slideFrame];
-    //    [self.view addSubview:self.pictureRotationAngle];
-    //    self.pictureRotationAngle.minimumValue = 0;
-    //    self.pictureRotationAngle.maximumValue = 2*M_PI;
-    //    self.pictureRotationAngle.value = M_PI/2.0;
-    
-    //    [self.pictureRotationAngle addTarget:self action:@selector(rotateImage) forControlEvents:UIControlEventValueChanged];
-    //
-    //    self.picture.transform = CGAffineTransformRotate(self.picture.transform, M_PI/4.0);
-    //    self.picture.transform = CGAffineTransformMakeRotation(self.pictureRotationAngle.value);
+//        CGRect slideFrame = CGRectMake(100, 400, 200, 20);
+//        self.pictureRotationAngle = [[UISlider alloc] initWithFrame:slideFrame];
+//        [self.view addSubview:self.pictureRotationAngle];
+//        self.pictureRotationAngle.minimumValue = 0;
+//        self.pictureRotationAngle.maximumValue = 2*M_PI;
+//        self.pictureRotationAngle.value = M_PI/2.0;
+//    
+//        [self.pictureRotationAngle addTarget:self action:@selector(rotateImage) forControlEvents:UIControlEventValueChanged];
+//    
+//        self.picture.transform = CGAffineTransformMakeRotation(self.pictureRotationAngle.value);
     
 }
 
@@ -121,11 +120,11 @@
 //
 //}
 
-//- (void)rotateImage
-//{
-//    self.picture.transform = CGAffineTransformMakeRotation(self.pictureRotationAngle.value);
-//
-//}
+- (void)rotateImage
+{
+    self.picture.transform = CGAffineTransformMakeRotation(self.pictureRotationAngle.value);
+
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
